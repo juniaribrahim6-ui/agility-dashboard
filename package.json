@@ -15,5 +15,13 @@
     "express": "^5.2.1",
     "ws": "^8.20.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juniaribrahim6-ui/agility-dashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/juniaribrahim6-ui/agility-dashboard/issues"
+  },
+  "homepage": "https://github.com/juniaribrahim6-ui/agility-dashboard#readme"
 }

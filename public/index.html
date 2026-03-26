@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGILITY Smart Training Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-section">
+                <div class="logo">AGILITY</span></div>
+                <div class="subtitle">SMART TRAINING SYSTEM</div>
+            </div>
+            <div class="header-right">
+                <div id="timer-display" class="timer">00:00</div>
+                <div id="connection-status" class="status disconnected">
+                    <span class="dot"></span> PERANGKAT TERPUTUS
+                </div>
+            </div>
+        </header>
+
+        <div class="control-bar">
+            <button id="btn-start" class="btn-neon">MULAI LATIHAN</button>
+            <button id="btn-stop" class="btn-outline" disabled>BERHENTI & REKAP</button>
+        </div>
+
+        <div class="grid-stats">
+            <div class="card neon-blue">
+                <h3>PUKULAN KIRI</h3>
+                <div class="value" id="punch-left">0</div>
+                <div class="sub-stats">
+                    <span>Puncak: <b id="peak-pl">0</b>g</span>
+                    <span>Speed: <b id="speed-pl">0</b> m/s</span>
+                </div>
+            </div>
+            <div class="card neon-purple">
+                <h3>PUKULAN KANAN</h3>
+                <div class="value" id="punch-right">0</div>
+                <div class="sub-stats">
+                    <span>Puncak: <b id="peak-pr">0</b>g</span>
+                    <span>Speed: <b id="speed-pr">0</b> m/s</span>
+                </div>
+            </div>
+            <div class="card neon-blue">
+                <h3>TENDANGAN KIRI</h3>
+                <div class="value" id="kick-left">0</div>
+                <div class="sub-stats">
+                    <span>Puncak: <b id="peak-kl">0</b>g</span>
+                    <span>Speed: <b id="speed-kl">0</b> m/s</span>
+                </div>
+            </div>
+            <div class="card neon-purple">
+                <h3>TENDANGAN KANAN</h3>
+                <div class="value" id="kick-right">0</div>
+                <div class="sub-stats">
+                    <span>Puncak: <b id="peak-kr">0</b>g</span>
+                    <span>Speed: <b id="speed-kr">0</b> m/s</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-secondary">
+            <div class="card summary-card">
+                <h3>INTENSITAS (HPM)</h3>
+                <div class="value-large" id="total-min">0</div>
+                <p>Hits Per Minute</p>
+            </div>
+            <div class="card score-card">
+                <h3>SKOR PERFORMA</h3>
+                <div class="value-large color-gradient" id="perf-score">0</div>
+                <div class="progress-bar"><div id="score-fill"></div></div>
+            </div>
+        </div>
+
+        <div class="card chart-container">
+            <h3>MONITOR AKTIVITAS REAL-TIME</h3>
+            <canvas id="activityChart"></canvas>
+        </div>
+
+        <div class="card table-container">
+            <h3>REKAPITULASI SESI TERAKHIR</h3>
+            <table class="recap-table">
+                <thead>
+                    <tr>
+                        <th>Metrik</th>
+                        <th>Hasil</th>
+                    </tr>
+                </thead>
+                <tbody id="recap-body">
+                    <tr><td>Total Serangan</td><td>-</td></tr>
+                    <tr><td>Rata-rata Power</td><td>-</td></tr>
+                    <tr><td>Kecepatan Tertinggi</td><td>-</td></tr>
+                    <tr><td>Waktu Latihan</td><td>-</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
